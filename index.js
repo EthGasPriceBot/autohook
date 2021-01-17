@@ -264,6 +264,8 @@ class Autohook extends EventEmitter {
 
   async start(webhookUrl = null) {
     
+    console.log('Starting /EthGasPriceBot/autohook server');
+    
     if (!webhookUrl) {
       this.startServer();
       if (this.ngrokSecret) {

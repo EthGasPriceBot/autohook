@@ -281,6 +281,15 @@ class Autohook extends EventEmitter {
       throw e;
     }    
   }
+  
+  
+  async stop() {
+    
+    this.ngrok.disconnect();
+    this.server = null;
+    console.log('Server stopped');
+    
+  }
 
   async subscribe({oauth_token, oauth_token_secret, screen_name = null}) {
     const auth = {

@@ -285,14 +285,20 @@ class Autohook extends EventEmitter {
   }
   
   
+  
+  
+  // 2021-01-18 added
   async stop() {
     
     console.log('Server stopping...');
-    await ngrok.disconnect();
+    await ngrok.kill();
     this.server = null;
     console.log('Server stopped');
     
   }
+  
+  
+  
 
   async subscribe({oauth_token, oauth_token_secret, screen_name = null}) {
     const auth = {

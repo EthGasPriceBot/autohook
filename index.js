@@ -292,8 +292,10 @@ class Autohook extends EventEmitter {
     
     console.log('Ngrok and Server stopping...');
     await ngrol.disconnect();
+    console.log('Ngrok disconnected');
     await ngrok.kill();
-    this.server.close();
+    console.log('Ngrok killed');
+    //this.server.close();
     console.log('Ngrock and Server stopped');
     
   }
